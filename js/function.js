@@ -17,7 +17,7 @@ function translateNerType() {
 function printNerType(i) {
 	var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-	var space = " ";
+	var specialCase = " ,.;:";
 	var defaultWidth = 0;
 	var defaultHeight = 80;
 	var preImagePath = "image/";
@@ -26,15 +26,29 @@ function printNerType(i) {
 
 	if ((upperCase.indexOf(i) == -1) && 
 		(lowerCase.indexOf(i) == -1) &&
-		(i != space)) 
+		(specialCase.indexOf(i) == -1)) 
 	{
 		alert("please etner English character!");
 	}
 
     if (lowerCase.indexOf(i) != -1)
     	i = i.toUpperCase();
-    if (i == space)
-    	i = "space";
+
+    switch (specialCase.indexOf(i)){
+    	case 0:
+    		i = "space";
+    		break;
+    	case 1:
+    	case 2:    	
+    		i = "dot";
+    		break;
+    	case 3:
+    	case 4:    	
+    		i = "colon";
+    		break;
+    	default:
+    		break;
+    }
 
 	path = preImagePath + i + postImagePath;
 	appendImages(path, defaultWidth, defaultHeight)
