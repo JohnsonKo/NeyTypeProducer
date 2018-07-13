@@ -17,18 +17,24 @@ function translateNerType() {
 function printNerType(i) {
 	var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+	var space = " ";
 	var defaultWidth = 0;
 	var defaultHeight = 80;
 	var preImagePath = "image/";
 	var postImagePath = ".png";
 	var path;
 
-	if ((upperCase.indexOf(i) == -1) && (lowerCase.indexOf(i) == -1)) {
+	if ((upperCase.indexOf(i) == -1) && 
+		(lowerCase.indexOf(i) == -1) &&
+		(i != space)) 
+	{
 		alert("please etner English character!");
 	}
 
     if (lowerCase.indexOf(i) != -1)
     	i = i.toUpperCase();
+    if (i == space)
+    	i = "space";
 
 	path = preImagePath + i + postImagePath;
 	appendImages(path, defaultWidth, defaultHeight)
