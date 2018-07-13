@@ -18,7 +18,7 @@ function printNerType(i) {
 	var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 	var defaultWidth = 0;
-	var defaultHeight = 60;
+	var defaultHeight = 80;
 	var preImagePath = "image/";
 	var postImagePath = ".png";
 	var path;
