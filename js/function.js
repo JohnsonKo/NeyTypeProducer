@@ -2,7 +2,7 @@
 
 function translateNerType() {
 
-	var str = String(document.getElementById('content').value);
+	var str = String(document.getElementById('myInput').value);
 	//alert(str);
 	//alert(str.length);
 
@@ -57,4 +57,7 @@ function removeAllChild(){
 	    myNode.removeChild(myNode.firstChild);
 	}
 }
+
+
+
 
